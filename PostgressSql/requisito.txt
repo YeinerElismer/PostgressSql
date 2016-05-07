@@ -1,0 +1,9 @@
+El sistema tendra acceso mediante tres opciones administrador, cliente y free
+
+LOGIN
+	el usuario no tiene que ser nulo.
+	el usuario debe ser con mayusculas.
+	la contraseña no tiene que tener menos de 5 caracteres.
+	el id es único mayorque 0 
+	el usuario  y la contraseña debe ser único	
+	el tipo se registra en dos opciones con  "ADMINISTRADOR" y con "CLIENTE".
