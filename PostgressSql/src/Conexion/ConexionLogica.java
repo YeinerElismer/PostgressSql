@@ -16,7 +16,7 @@ public class ConexionLogica {
         if (coneccion != null) {
             return;
         }
-        String URL  = "jdbc:postgresql://localhost:5432/postgres";
+        String URL  = "jdbc:postgresql://localhost:5432/Tienda";
         String Usuario = "postgres";
         String Contraseña = "postgress";
         
@@ -33,12 +33,12 @@ public class ConexionLogica {
         }
         
     }
-    public boolean IngresarLogin(String Usuario,String Contraseña,String tipo){
+    public boolean IngresarLogin(String Usuario,String Contraseña){
         Coneccion();
         boolean referencia = false;
         try {
             s = coneccion.createStatement();
-            rs = s.executeQuery("SELECT tb_login.tb_login_usuario,tb_login.tb_login_contraseña FROM tb_login WHERE tb_login_usuario = '"+Usuario+"'AND tb_login_contraseña = '"+Contraseña+"'AND tb_login_tipo = '"+tipo+"';");
+            rs = s.executeQuery("SELECT tb_login.tb_login_usuario,tb_login.tb_login_contraseña FROM tb_login WHERE tb_login_usuario = '"+Usuario+"'AND tb_login_contraseña = '"+Contraseña+"';");
         } catch (Exception e) {
             System.out.println("problema buscando usuario y contraseña");
         }
