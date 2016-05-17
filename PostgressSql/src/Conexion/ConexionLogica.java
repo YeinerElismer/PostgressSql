@@ -56,4 +56,27 @@ public class ConexionLogica {
         
         return referencia;
     }
+    
+    public void ConsultarClientes(){
+        Coneccion();
+        Integer Id,DNI,Telefono,Fecha;
+        String Nombre,ApPaterno,ApMaterno,Direccion;
+        try {
+            s = coneccion.createStatement();
+            rs = s.executeQuery("SELECT tb_cliente_nombre FROM tb_cliente");
+        } catch (Exception e) {
+            System.out.println("problema "+e);
+        }
+        try {
+            while (rs.next()) {
+                Id = rs.getInt(1);
+               Nombre= rs.getString(2);
+                System.out.println(Id);
+            }
+        } catch (Exception e) {
+            System.out.println("problema al imprimir");
+        }
+        
+    }
+    
 }

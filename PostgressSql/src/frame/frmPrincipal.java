@@ -11,9 +11,17 @@ public class frmPrincipal extends javax.swing.JFrame {
         
         initComponents();
         setExtendedState(frmPrincipal.MAXIMIZED_BOTH);
-        frmProgress a = new frmProgress();
-        jDesktopPane1.add(a);
-        a.setVisible(true);
+        //frmProgress a = new frmProgress();
+        //jDesktopPane1.add(a);
+        //a.setVisible(true);
+        jMenuItem4.disable();
+        jMenuItem4.setVisible(false);
+        
+        frmVenta obj = new frmVenta();
+        jDesktopPane1.add(obj);
+        obj.setVisible(true);
+        
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -25,6 +33,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,11 +41,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGap(0, 1105, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Administrador");
@@ -51,7 +60,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Mantenimiento");
+
+        jMenuItem4.setText("Agregar Cliente");
+        jMenu2.add(jMenuItem4);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -116,5 +129,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    public static javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }

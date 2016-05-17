@@ -5,6 +5,7 @@ import Conexion.ConexionLogica;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import frame.frmPrincipal;
 
 /**
  *
@@ -16,16 +17,15 @@ public class frmLogin extends javax.swing.JInternalFrame {
     
     public frmLogin() {
         initComponents();
-        //this.setSize(675, 400);
-        //this.setLocation(((int)(this.getToolkit().getScreenSize().getWidth() / 2) - ((int)(this.getWidth() / 2))),((int)(this.getToolkit().getScreenSize().getHeight()/ 2) - ((int)(this.getHeight() / 2))));
         jDesktopPane1.setVisible(true);
         URL url = this.getClass().getResource("/imagenes/login_adm.png");
         ImageIcon icono = new ImageIcon(url);
         jLabel5.setIcon(icono);
+        
+        
     }
     
     public void BorrarCasillas(){
-        
         jTextField1.setText(null);
         jPasswordField1.setText(null);
     }
@@ -171,10 +171,12 @@ public class frmLogin extends javax.swing.JInternalFrame {
         String Usuario = jTextField1.getText();
         String Contraseña=jPasswordField1.getText();
         referencia = obj.IngresarLogin(Usuario,Contraseña);
-
+        
         if (!jTextField1.getText().isEmpty()) {
             if (referencia!=false) {
                 //cuando ingresa habilita?
+                frmPrincipal.jMenuItem4.enable();
+                frmPrincipal.jMenuItem4.setVisible(true);
                 
                 
                 this.dispose();
@@ -201,7 +203,7 @@ public class frmLogin extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel5MouseEntered
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jDesktopPane1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDesktopPane1MouseEntered
